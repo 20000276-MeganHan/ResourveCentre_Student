@@ -140,7 +140,8 @@ public class ResourceCentre {
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
 				"AVAILABLE", "DUE DATE","OPTICAL ZOOM");
 		 output += retrieveAllCamcorder(camcorderList);	
-		System.out.println(output);
+		System.out
+		.println(output);
 	}
 
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
@@ -172,9 +173,8 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		Chromebook cb =null;
-		System.out.println("I dont like you ");
 		// write your code here
-		System.out.println("HI");
+
 		return cb;
 		
 	}	
