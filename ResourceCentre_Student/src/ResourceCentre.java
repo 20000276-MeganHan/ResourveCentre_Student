@@ -172,6 +172,7 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		Chromebook cb =null;
+		System.out.println("Bye");
 		// write your code here
 		return cb;
 		
@@ -251,6 +252,7 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		boolean isReturned = false;
 		// write your code here
+		
 		return isReturned;
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
