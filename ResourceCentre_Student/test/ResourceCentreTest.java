@@ -49,7 +49,7 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public void testAddChromebook() {
+	public void testAddChromebook() { //jingru
 		// fail("Not yet implemented");
 		// write your code here
 		// Item list is not null, so that can add a new item
@@ -68,7 +68,7 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public void testRetrieveAllCamcorder() {
+	public void testRetrieveAllCamcorder() { 
 		// Test if Item list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 
@@ -169,16 +169,35 @@ public class ResourceCentreTest {
 	}
 
 	@Test
-	public void testDoReturnCamcorder() {
-
-
+	public void testDoReturnCamcorder() { //jingru
+		//fail("Not yet implemented");
+		// write your code here
+		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
+		ResourceCentre.doReturnCamcorder(camcorderList, cc1.getAssetTag());
+		camcorderList.add(cc1);
+		assertEquals("Test if that Camcorder arraylist size is 1?", 1, camcorderList.size());
+		assertTrue(cc1.getIsAvailable());		
+				
+		ResourceCentre.doReturnCamcorder(camcorderList, cc2.getAssetTag());
+		camcorderList.add(cc2);
+		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
+		assertTrue(cc2.getIsAvailable());
 	}
 
 	@Test
-	public void testDoReturnChromebook() {
+	public void testDoReturnChromebook() { //jingru
 		// fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		ResourceCentre.doReturnChromebook(chromebookList, cb1.getAssetTag());
+		chromebookList.add(cb1);
+		assertEquals("Test if that Chromebook arraylist size is 1?", 1, chromebookList.size());
+		assertTrue(cb1.getIsAvailable());
 		
+		ResourceCentre.doReturnChromebook(chromebookList, cb2.getAssetTag());
+		chromebookList.add(cb2);
+		assertEquals("Test if that Chromebook arraylist size is 2?", 2, chromebookList.size());
+		assertTrue(cb2.getIsAvailable());
 	}
 
 	@After
