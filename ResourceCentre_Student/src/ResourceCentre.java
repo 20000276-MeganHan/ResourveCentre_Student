@@ -172,7 +172,7 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		Chromebook cb =null;
-		System.out.println("Bye");
+		System.out.println("I dont like you ");
 		// write your code here
 		System.out.println("HI");
 		return cb;
