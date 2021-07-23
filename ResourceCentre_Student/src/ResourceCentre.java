@@ -174,6 +174,7 @@ public class ResourceCentre {
 		Chromebook cb =null;
 		System.out.println("Bye");
 		// write your code here
+		System.out.println("HI");
 		return cb;
 		
 	}	
