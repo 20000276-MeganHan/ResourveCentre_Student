@@ -172,6 +172,7 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		Chromebook cb =null;
+		System.out.println("I dont like you ");
 		// write your code here
 		System.out.println("HI");
 		return cb;
@@ -252,6 +253,7 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		boolean isReturned = false;
 		// write your code here
+
 		for (int i = 0; i < chromebookList.size(); i++) {
 			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
 					&& chromebookList.get(i).getIsAvailable() == false) {
