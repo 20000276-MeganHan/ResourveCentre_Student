@@ -122,7 +122,7 @@ public class ResourceCentreTest {
 
 	@Test
 	public void testDoLoanCamcorder() {
-		//meganhan
+		//meganhan 
 		assertNotNull("Test if there is valid Camcorder arraylist to loan from", camcorderList);
 
 		ResourceCentre.addCamcorder(camcorderList, cc1);
