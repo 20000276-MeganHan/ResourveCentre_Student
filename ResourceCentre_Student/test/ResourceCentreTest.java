@@ -93,15 +93,50 @@ public class ResourceCentreTest {
 	}
 	@Test
 	public void testRetrieveAllChromebook() {
-		//fail("Not yet implemented");
-		// write your code here
+		// Test if Item list is not null but empty, so that can add a new item
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		
+		//test if the list of chromebook retrieved from the SourceCentre is empty
+				String allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+				String testOutput = "";
+				assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromebook);
+				
+		//Given an empty list, after adding 2 items, test if the size of the list is 2
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		assertEquals("Test if that Camcorder arraylist size is 2?", 2, chromebookList.size());
+		
+		//test if the expected output string same as the list of chromebook retrieved from the SourceCentre
+		allChromebook= ResourceCentre.retrieveAllChromebook(chromebookList);
+
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "My Google Chromebook 1st", "Mac OS");
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "SAMSUNG Chromebook 4+", "Win 10");
+	
+		assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromebook);
+		
 	}
 
 	@Test
 	public void testDoLoanCamcorder() {
-		//fail("Not yet implemented");
-		// write your code here
+		assertNotNull("Test if there is valid Camcorder arraylist to loan from", camcorderList);
 		
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		//normal
+		Boolean ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "8-8-2020" );
+		
+		assertTrue("Test if an available item is ok to loan?", ok);
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "8-8-2020");
+		
+		assertFalse("Test if an available item is NOT ok to loan?", ok);
+		//error 
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020");
+		
+		assertFalse("Test if an un-available item is NOT ok to loan?", ok);
+		//error
+		ok = ResourceCentre.doLoanCamcorder(camcorderList, "CC0013", "8-8-2020");
+		assertFalse("Test if an non-existing item is ok to loan?", ok);
 	}
 	
 	@Test
